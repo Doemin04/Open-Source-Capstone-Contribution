@@ -38,7 +38,7 @@ Unlike high-level routing components, the failure resides specifically inside th
 
 ### Environment Setup
 * **Base Infrastructure:** Handled via a local Docker Desktop container instance running on a Windows 10 host node, using the official misp-docker deployment orchestration template.
-* **Volume Mapping Configuration:** Bound the local git fork development directory via `docker-compose.override.yml` directly into the container execution space: `"C:/Users/dominik/Desktop/MISP/app/Model:/var/www/MISP/app/Model"`
+* **Volume Mapping Configuration:** Bound the local git fork development directory via `docker-compose.override.yml` directly into the container execution space: `"./app/Model:/var/www/MISP/app/Model"`
 * **Subsystem Configuration Overrides:** Bypassed framework caching limits by executing the CakePHP administrative console directly inside the active container to flip module discovery flags:
   * docker-compose exec misp-core /var/www/MISP/app/Console/cake Admin setSetting "Plugin.Import_csvimport_enabled" true
   * docker-compose exec --user www-data misp-core /var/www/MISP/app/Console/cake Admin runUpdates

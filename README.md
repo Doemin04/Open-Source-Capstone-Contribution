@@ -62,8 +62,8 @@ Unlike high-level routing components, the failure resides specifically inside th
 ### Reproduction Evidence
 * **Commit showing reproduction:** https://github.com/Doemin04/MISP/commit/78ef6c1a82e9c4f22879e3f32f60f5857aac0e82
 * **Screenshots/logs:** Ingestion preview matrix displays blank arrays under the classification columns despite matching an active database tag.
-  ![Reproduction Actual Failure](images/image_0a38a1.png)
-  ![Database View Missing Tags](images/image_0a35ba.jpg)
+  ![Reproduction Actual Failure](image/image_0a38a1.png)
+  ![Database View Missing Tags](image/image_0a35ba.jpg)
 * **My findings:** The csvimport python-extension component streams the data column safely over Tornado sockets into the web container. The data drops explicitly inside the core PHP model array filtering method because the system has no code block to listen for the incoming attribute_tag key.
 
 ---

@@ -3,7 +3,8 @@
 **Contribution Number:** 1  
 **Student:** Minh Nguyen  
 **Issue:** https://github.com/MISP/MISP/issues/9238  
-**Status:** Phase III Complete  
+**Pull Request:** https://github.com/MISP/MISP/pull/10869  
+**Status:** Phase IV Complete 
 
 ---
 
@@ -95,15 +96,16 @@ Using UMPIRE framework (adapted):
 ## Testing Strategy
 
 ### Unit Tests
-* [x] Test case 1: Validate array parsing with cleanly formatted standard taxonomy tags.
- 
-* [x] Test case 2: Validate edge-case parsing with complex delimiters (colons, trailing whitespace, and bracket strings).
-  
-* [x] Test case 3: Assert default error propagation postures when input parameters contain duplicate payloads.
- 
+* [x] Test case 1: Validate array parsing with cleanly formatted standard taxonomy tags.  
+  ![Baseline Tag Ingestion Pass](images/image_4bf181.png)
+* [x] Test case 2: Validate edge-case parsing with complex delimiters (colons, trailing whitespace, and bracket strings).  
+  ![Edge Case Character Verification Pass](images/image_4be9f8.png)
+* [x] Test case 3: Assert default error propagation postures when input parameters contain duplicate payloads.  
+  ![Hashing Deduplication Pass](images/image_4b0f66.png)
 
 ### Integration Tests
-* [x] Verification of full bulk file ingestion utilizing multi-row CSV payloads.
+* [x] Verification of full bulk file ingestion utilizing multi-row CSV payloads.  
+  ![Bulk Matrix Ingestion Sync Pass](images/image_4b0cbf.png)
 
 
 ### Manual Testing
@@ -125,6 +127,9 @@ Phase II Complete. Deployed local misp-docker infrastructure, corrected core per
 ### Week 3 Progress
 Phase III Complete. Implemented a type-safe extraction filter block inside the __fillAttribute array normalization wrapper within MISP/app/Model/Event.php. Built robustness parameters handling both raw string lines and pre-split array formats. Deployed tracking arrays to scrub out duplicate tags and loose spacing, fully satisfying software development lifecycle standards for security, system resource optimization, and clear upgrade readability.
 
+### Week 4 Progress
+Phase IV Complete. Generated a pull request targeting the upstream parent repository code path layout. Mapped explicit testing vectors, integrated automated evidence validation matrices, and configured operational compliance parameters to satisfy standard enterprise software documentation benchmarks.
+
 ### Code Changes
 * **Files modified:** MISP/app/Model/Event.php
 * **Key commits:** fix: resolve csvimport attribute tag erasure inside __fillAttribute loop
@@ -133,16 +138,18 @@ Phase III Complete. Implemented a type-safe extraction filter block inside the _
 
 ## Pull Request
 
-**PR Link:** [To be completed in Phase IV - Week 4]  
-**PR Description:** [To be completed in Phase IV - Week 4]  
-**Maintainer Feedback:** [To be completed in Phase IV - Week 4]  
-**Status:** Awaiting review  
+**PR Link:** https://github.com/MISP/MISP/pull/10869  
+**PR Description:** This pull request introduces a type-vetted parsing block inside the Event model layer (`__fillAttribute`) to preserve, clean, and map `attribute_tag` arrays during bulk module data ingestion streams (such as CSV import). It addresses the ingestion erasure bug by ensuring incoming tag data is split, trimmed, deduplicated, and mapped to the standard array signature expected by the backend persistence layer without introducing type mutability regressions.  
+**Maintainer Feedback:** Integration tracking indicates that commits require a cryptographically verified GPG signature payload to satisfy repository branch enforcement checks.  
+**Status:** Awaiting review / Iterating
 
 ---
 
 ## Learnings & Reflections
 
-[To be completed in Phase IV - Week 4]
+* **MVC Architecture Boundaries:** Handling data transformation directly at the core model normalization layer provides global architectural protection. Fixing mutations inside the entity model layer secures all downstream ingestion vectors simultaneously, eliminating the need for brittle, isolated controller-level patch work.
+* **Defensive Type Hardening:** Modifying legacy backend applications demands rigorous data-type assertion fences. Validating mutability limits using `is_string` and `is_array` checks prevents runtime type errors (`TypeErrors`) when secondary microservices pass unexpectedly pre-formed objects into flat-string ingestion functions.
+* **Enterprise Ingestion Performance:** Mitigating data duplication at the processing boundary using $O(1)$ lookup mapping tracking avoids redundant database writes, preserving transactional efficiency and table lookup performance across heavy intelligence feeds.
 
 ---
 

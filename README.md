@@ -4,7 +4,7 @@
 **Student:** Minh Nguyen  
 **Issue:** https://github.com/MISP/MISP/issues/9238  
 **Pull Request:** https://github.com/MISP/MISP/pull/10869  
-**Status:** Phase IV Complete 
+**Status:** Merged
 
 ---
 
@@ -97,15 +97,15 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 * [x] Test case 1: Validate array parsing with cleanly formatted standard taxonomy tags.  
-  ![Baseline Tag Ingestion Pass](images/image_4bf181.png)
+  ![Baseline Tag Ingestion Pass](image/image_4bf181.png)
 * [x] Test case 2: Validate edge-case parsing with complex delimiters (colons, trailing whitespace, and bracket strings).  
-  ![Edge Case Character Verification Pass](images/image_4be9f8.png)
+  ![Edge Case Character Verification Pass](image/image_4be9f8.png)
 * [x] Test case 3: Assert default error propagation postures when input parameters contain duplicate payloads.  
-  ![Hashing Deduplication Pass](images/image_4b0f66.png)
+  ![Hashing Deduplication Pass](image/image_4b0f66.png)
 
 ### Integration Tests
 * [x] Verification of full bulk file ingestion utilizing multi-row CSV payloads.  
-  ![Bulk Matrix Ingestion Sync Pass](images/image_4b0cbf.png)
+  ![Bulk Matrix Ingestion Sync Pass](image/image_4b0cbf.png)
 
 
 ### Manual Testing
@@ -128,7 +128,7 @@ Phase II Complete. Deployed local misp-docker infrastructure, corrected core per
 Phase III Complete. Implemented a type-safe extraction filter block inside the __fillAttribute array normalization wrapper within MISP/app/Model/Event.php. Built robustness parameters handling both raw string lines and pre-split array formats. Deployed tracking arrays to scrub out duplicate tags and loose spacing, fully satisfying software development lifecycle standards for security, system resource optimization, and clear upgrade readability.
 
 ### Week 4 Progress
-Phase IV Complete. Generated a pull request targeting the upstream parent repository code path layout. Mapped explicit testing vectors, integrated automated evidence validation matrices, and configured operational compliance parameters to satisfy standard enterprise software documentation benchmarks.
+Phase IV Complete. Generated a formal pull request to the upstream core repository branch. Configured local cryptographic signing architectures to satisfy remote branch protection validations, established verification logging loops, and completed all compliance requirements. Following review, the code patch was formally approved and merged into the core platform upstream integration pipeline branch (MISP:develop).
 
 ### Code Changes
 * **Files modified:** MISP/app/Model/Event.php
@@ -139,9 +139,9 @@ Phase IV Complete. Generated a pull request targeting the upstream parent reposi
 ## Pull Request
 
 **PR Link:** https://github.com/MISP/MISP/pull/10869  
-**PR Description:** This pull request introduces a type-vetted parsing block inside the Event model layer (`__fillAttribute`) to preserve, clean, and map `attribute_tag` arrays during bulk module data ingestion streams (such as CSV import). It addresses the ingestion erasure bug by ensuring incoming tag data is split, trimmed, deduplicated, and mapped to the standard array signature expected by the backend persistence layer without introducing type mutability regressions.  
-**Maintainer Feedback:** Integration tracking indicates that commits require a cryptographically verified GPG signature payload to satisfy repository branch enforcement checks.  
-**Status:** Awaiting review / Iterating
+**PR Description:** This pull request introduces a type-vetted parsing block inside the Event model layer (__fillAttribute) to preserve, clean, and map attribute_tag arrays during bulk module data ingestion streams (such as CSV import). It addresses the ingestion erasure bug by ensuring incoming tag data is split, trimmed, deduplicated, and mapped to the standard array signature expected by the backend persistence layer without introducing type mutability regressions.  
+**Maintainer Feedback:** Cryptographic SSH/GPG verification checks passed. Target routing adjusted by maintainer iglocska from stable branch tracking line (2.5) into the active core staging integration branch (develop) to bake the changes ahead of the upcoming platform minor release cycle.  
+**Status:** Merged
 
 ---
 
